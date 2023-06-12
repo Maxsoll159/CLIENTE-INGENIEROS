@@ -13,12 +13,6 @@ body h4 p{
   color: black;
 }
 
-.dark-card {
-  background-color: #222 !important;
-  color: white !important;
-  border-color: white;
-}
-
 .dark-mode h2 {
   color: #fff; /* Color de texto en modo oscuro para h2 */
 }
@@ -1697,3 +1691,38 @@ section {
 }
 
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-button img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-button img:hover {
+  transform: scale(1.1);
+}
+
+#whatsapp-message {
+  opacity: 0;
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  color: white;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  width: 250px;
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out;
+  border: none;
+}
+
+#whatsapp-message.show {
+  opacity: 1;
+}

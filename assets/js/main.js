@@ -28,7 +28,7 @@
     info.forEach((ele) => {
       ele.classList.toggle("especial");
     });
-    hola.classList.toggle("hola")
+    hola.classList.toggle("hola");
   }
 
   const responsiveModeButton = document.getElementById("responsiveModeButton");
@@ -40,7 +40,7 @@
     info.forEach((ele) => {
       ele.classList.toggle("especial");
     });
-    hola.classList.toggle("hola")
+    hola.classList.toggle("hola");
   }
 
   /**
@@ -329,4 +329,21 @@
    * Initiate Pure Counter
    */
   new PureCounter();
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let whatsappButton = document.querySelector(".whatsapp-button");
+    let whatsappMessage = document.getElementById("whatsapp-message");
+    let closeButton = document.querySelector('#closeButton');
+
+    whatsappButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      whatsappMessage.classList.toggle("show");
+    });
+
+    closeButton.addEventListener('click', function() {
+      whatsappMessage.classList.remove('show');
+    });
+  });
+
 })();
