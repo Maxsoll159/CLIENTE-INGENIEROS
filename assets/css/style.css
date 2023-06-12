@@ -1134,7 +1134,10 @@ section {
     color: white;
   }
   #carouselExampleAutoplaying {
-    height: 1120px;
+    height: auto;
+  }
+  .medidaCarru1{
+    height: 1120px !important;
   }
 }
 
