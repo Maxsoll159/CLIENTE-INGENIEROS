@@ -18,7 +18,7 @@
   const darkModeButton = document.getElementById("darkModeButton");
   const formulario = document.querySelector(".php-email-form");
   const info = document.querySelectorAll(".especial");
-  const card = document.querySelector(".card");
+  const hola = document.querySelector(".hola");
   console.log(info);
   darkModeButton.addEventListener("click", toggleDarkMode);
   function toggleDarkMode() {
@@ -28,6 +28,7 @@
     info.forEach((ele) => {
       ele.classList.toggle("especial");
     });
+    hola.classList.toggle("hola")
   }
 
   const responsiveModeButton = document.getElementById("responsiveModeButton");
@@ -39,6 +40,7 @@
     info.forEach((ele) => {
       ele.classList.toggle("especial");
     });
+    hola.classList.toggle("hola")
   }
 
   /**
