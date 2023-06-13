@@ -1,4 +1,7 @@
 (function () {
+
+
+
   "use strict";
 
   /**
@@ -15,11 +18,11 @@
 
   //funcion de darkmode
 
+
   const darkModeButton = document.getElementById("darkModeButton");
   const formulario = document.querySelector(".php-email-form");
   const info = document.querySelectorAll(".especial");
   const hola = document.querySelector(".hola");
-  console.log(info);
   darkModeButton.addEventListener("click", toggleDarkMode);
   function toggleDarkMode() {
     const body = document.body;
@@ -240,34 +243,39 @@
   /**
    * Porfolio isotope and filter
    */
+
   window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
+    let portfolioContainer = document.querySelector(".portfolio-container");
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
       });
-
-      let portfolioFilters = select("#portfolio-flters li", true);
-
-      on(
-        "click",
-        "#portfolio-flters li",
-        function (e) {
+  
+      let infraestructurasEduc = document.querySelector("#portfolio-flters li[data-filter='.filter-planos']");
+      if (infraestructurasEduc) {
+        infraestructurasEduc.classList.add("filter-active");
+        portfolioIsotope.arrange({
+          filter: ".filter-planos"
+        });
+      }
+  
+      let portfolioFilters = document.querySelectorAll("#portfolio-flters li");
+      portfolioFilters.forEach(filter => {
+        filter.addEventListener("click", (e) => {
           e.preventDefault();
-          portfolioFilters.forEach(function (el) {
+          portfolioFilters.forEach(el => {
             el.classList.remove("filter-active");
           });
-          this.classList.add("filter-active");
-
+          filter.classList.add("filter-active");
+          let filterValue = filter.getAttribute("data-filter");
           portfolioIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
+            filter: filterValue
           });
-          portfolioIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
+          portfolioIsotope.on("arrangeComplete", () => {
+            AOS.init();
           });
-        },
-        true
-      );
+        });
+      });
     }
   });
 
