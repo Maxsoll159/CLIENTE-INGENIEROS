@@ -344,7 +344,7 @@
 
     closeButton.addEventListener('click', function() {
       whatsappMessage.classList.remove('show');
-      whatsappMessage.classList.remove('d-none')
+      whatsappMessage.classList.toggle('d-none')
     });
   });
 
