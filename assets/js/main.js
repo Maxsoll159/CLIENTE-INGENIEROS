@@ -339,10 +339,12 @@
     whatsappButton.addEventListener("click", function (e) {
       e.preventDefault();
       whatsappMessage.classList.toggle("show");
+      whatsappMessage.classList.toggle("d-none")
     });
 
     closeButton.addEventListener('click', function() {
       whatsappMessage.classList.remove('show');
+      whatsappMessage.classList.remove('d-none')
     });
   });
 
